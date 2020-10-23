@@ -27,5 +27,5 @@ hammer content-view create --name EL7 --solve-dependencies yes
 hammer content-view add-repository --name EL7 --repository 'Foreman client 2.1 - el7'
 hammer content-view publish --name EL7
 
-hammer activation-key create --name EL7 --content-view EL7 --environment Library
+hammer activation-key create --name EL7 --content-view EL7 --lifecycle-environment Library
 hammer activation-key add-subscription --name EL7 --subscription Foreman
