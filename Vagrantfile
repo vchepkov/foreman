@@ -66,6 +66,13 @@ Vagrant.configure("2") do |config|
       vb.name   = "node"
       vb.memory = "1024"
     end
+
+    node.vm.provision "shell", inline: <<-SHELL
+      yum -y install http://foreman.localdomain/pub/katello-ca-consumer-latest.noarch.rpm
+      yum -y install epel-release
+      subscription-manager register --org VVC --activationkey EL7
+      yum -y install katello-host-tools katello-host-tools-tracer
+    SHELL
   end
 
 end
